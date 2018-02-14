@@ -4,7 +4,9 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CPF;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.TextIndexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.TextScore;
 
 @Document
 public class Cliente {
@@ -14,15 +16,20 @@ public class Cliente {
 	private String id;
 	
 	@NotEmpty(message = "Nome não pode ser vazio")
+	@TextIndexed
 	private String nome;
 	
 	@NotEmpty(message = "Email não pode ser vazio")
 	@Email(message = "Email inválid")
+	@TextIndexed
 	private String email;
 	
 	@NotEmpty(message = "CPF não pode ser vazio")
 	@CPF(message = "CPF inválido")
 	private String cpf;
+	
+	@TextScore
+	private Float score;
 	
 	public Cliente() {
 		
@@ -58,6 +65,14 @@ public class Cliente {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public Float getScore() {
+		return score;
+	}
+
+	public void setScore(Float score) {
+		this.score = score;
 	}
 
 	
