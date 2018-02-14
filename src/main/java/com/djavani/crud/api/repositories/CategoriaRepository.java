@@ -6,12 +6,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.mongodb.core.query.TextCriteria;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.djavani.crud.api.models.Cliente;
+import com.djavani.crud.api.models.Categoria;
 
-public interface ClienteRepository extends MongoRepository<Cliente, String> {
+public interface CategoriaRepository extends MongoRepository<Categoria, String> {
 	
-	public List<Cliente> findAllBy(TextCriteria criteria, Pageable pages);
+	public List<Categoria> findAllBy(TextCriteria criteria, Pageable pages);
 
-	public List<Cliente> findByNomeLikeIgnoreCase(String nome);
+	public List<Categoria> findByNomeLikeIgnoreCase(String nome);
 
 }

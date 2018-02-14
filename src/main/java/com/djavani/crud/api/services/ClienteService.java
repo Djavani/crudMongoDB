@@ -2,7 +2,7 @@ package com.djavani.crud.api.services;
 
 import java.util.List;
 
-import com.djavani.crud.api.documents.Cliente;
+import com.djavani.crud.api.models.Cliente;
 
 public interface ClienteService {
 	

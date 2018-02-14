@@ -1,4 +1,6 @@
-package com.djavani.crud.api.documents;
+package com.djavani.crud.api.models;
+
+import java.io.Serializable;
 
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -9,8 +11,9 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.TextScore;
 
 @Document
-public class Cliente {
-	
+public class Cliente implements Serializable{
+	private static final long serialVersionUID = 1L;
+
 	// atributo id é obrigatorio para p mongodb
 	@Id
 	private String id;
