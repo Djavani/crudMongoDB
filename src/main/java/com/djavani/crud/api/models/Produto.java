@@ -9,6 +9,8 @@ import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.TextScore;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Document
 public class Produto implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -24,7 +26,7 @@ public class Produto implements Serializable{
 	@TextIndexed
 	private String descricao;
 	
-	@DBRef
+	@DBRef	
 	private Categoria categoria;
 		
 	@TextScore
